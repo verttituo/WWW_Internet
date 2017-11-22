@@ -18,6 +18,10 @@ body{
   color:#a52940;
 }
 
+#topbar{
+  height:78px;
+}
+
 /* Header menu */
 #topmenu {
   display:block;
