@@ -1,5 +1,5 @@
 body{
-  background:#372932 url(images/bgwolf.jpg) repeat-x;
+  background:#372932 url(images/bgwolf.jpeg) repeat-x;
 }
 
 #wrap{
@@ -13,9 +13,8 @@ body{
 /* Header */
 #header{
   height:240px;
-  margin:0px auto 10px auto;
-  font-family: Arial;
-  color:#a52940;
+  background:url(images/header.jpg) no-repeat left top;
+  clear:both;
 }
 
 #topbar{
