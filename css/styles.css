@@ -21,6 +21,10 @@ body{
   height:78px;
 }
 
+#table, th, td{
+  border: 2px solid;
+  border-collapse: collapse;
+
 /* Header menu */
 #topmenu {
   display:block;
