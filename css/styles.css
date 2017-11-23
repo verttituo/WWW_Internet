@@ -21,9 +21,21 @@ body{
   height:78px;
 }
 
-#table, th, td{
+
+table{
+  border-spacing:2px;
+}
+
+table, th, td{
   border: 2px solid;
-  border-collapse: collapse;
+  padding: 5px;
+}
+
+th{
+  text-align:left;
+}
+
+
 
 /* Header menu */
 #topmenu {
