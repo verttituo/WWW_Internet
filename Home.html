@@ -4,7 +4,29 @@
   <head>
   <title>My webpage</title>
   <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script>
+    function validateForm()
+    {
+      if (document.forms["myForm"]["name"].value==null || document.forms["myForm"]["name"].value=="")
+      {
+        alert("Name must be filled out");
+        return false;
+      }
+      if (document.forms["myForm"]["phone"].value==null || document.forms["myForm"]["phone"].value=="")
+      {
+        alert("Phone must be filled out");
+        return false;
+      }
+      if (document.forms["myForm"]["email"].value==null || document.forms["myForm"]["email"].value=="")
+      {
+        alert("Email must be filled out");
+        return false;
+      }
+      return true;
+    }
+  </script> 
   </head>
+  
   <body>
     <div id="wrap">
     <!--<div id="header">
@@ -81,11 +103,32 @@
     <form>
       First name: <input type="text" name="fname"> <br>
       Last name: <input type="text" name="lname"> <br>
-      Gender: <input type="radio" name="gender" value="male" checked> Male <br>
+      Gender: <input type="radio" name="gender" value="male" checked> Male 
       <input type="radio" name="gender" value="female"> Female <br>
       E-mail: <input type="email" name="email"><br>
+      Salutation: <select name="salutation">
+      <option>Dr</option>
+      <option>Mr</option>
+      <option>Mrs</option>
+      <option>Miss</option>
+      <option>Ms</option>
+      </select>
+      Favourite sport: <select name="sport">
+      <option>Baseball</option>
+      <option>Basketball</option>
+      <option>Football</option>
+      <option>Hockey</option>
+      </select>
       <input type="submit" value="Submit">
     </form>
+      <h2>Validation form</h2>
+    <form name="myForm" onsubmit="return validateForm()">
+      Name: <input type="text" name="name" /><br/>
+      Phone: <input type="text" name="phone" /><br/>
+      E-mail: <input type="text" name="email" />br/>
+      <input type="submit" value="Click to Submit" />
+    </form>
+      
     </div>
     </div>
     <div id ="footer">
