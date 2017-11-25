@@ -158,9 +158,11 @@
     <script> 
     function initMap() 
       {
+        if (navigator.geolocation){
         var location = {lat: 64.222178, lng: 27.727850};
         var map = new google.maps.Map(document.getElementById("map"),{zoom: 4, center: location});
         var marker = new google.maps.Marker({position: location, map: map });
+        }
       } 
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhnN6t4blYzVVDQMsr6w4pIjgj92SdBao&callback=initMap"></script>
