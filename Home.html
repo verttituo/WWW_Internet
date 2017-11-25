@@ -35,6 +35,7 @@
     {
       height: 400px;
       width: 80px;
+      float: left;
     }
   </style>
   </head>
@@ -153,6 +154,7 @@
     </div>
     </div>
     <br><br>
+
     <h2>Google map</h2>
     <div id="map"</div> <!-- Try put the script to header -->
     <script> 
@@ -166,6 +168,30 @@
       } 
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhnN6t4blYzVVDQMsr6w4pIjgj92SdBao&callback=initMap"></script>
+    <br><br>  
+
+    <h2>Another googlemap test. Click to see position</h2>
+    <div id="map"></div>
+    <button onclick="showLocation()">Click</button>
+    <script>
+      function.showLocation()
+      {
+       if(navigator.geolocation) 
+       {
+         navigator.geolocation.getCurrentPosition(showPosition);
+       }
+       else
+       {
+         alert("Your browser does not support geolocation"); 
+       }
+      }
+      function showPosition(position)
+      {
+       alert("Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude); 
+      }
+    </script>
+    <br>
+
     <div id ="footer">
       <p>Copyright &copy;
         <script type="text/javascript">var ct=new Date(); document.write(ct.getFullYear());</script>
