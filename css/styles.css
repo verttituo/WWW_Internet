@@ -1,29 +1,30 @@
 body{
-  background:#372932 url(images/bgwolf.jpeg) repeat-x;
+  background:#372932;
 }
 
 #wrap{
   width:680px;
   margin:0px auto 10px auto;
   font-family:Arial;
-  font-size:12px;
-  color:#532e3e;
+  font-size:16px;
 }
 
 /* Header */
 #header{
-  height:240px;
-  background:url(images/header.jpg) no-repeat left top;
+  height:2000px;
+  background-image:url("images/header.jpg") no-repeat left top;
   clear:both;
 }
 
 #topbar{
   height:78px;
+  font-size: 12px;
 }
 
 
 table{
   border-spacing:2px;
+  color:#FFFFFF;
 }
 
 table, th, td{
@@ -88,7 +89,7 @@ table#1 {
 }
 
 #mainpage {
-  width:700px;
+  width:800px;
   float:left;
   padding:5px 5px 5px 0px;
   height:auto;
@@ -151,4 +152,9 @@ h1, h2, h3, h4, h5 {
   font-size:10px;
   clear:both;
 }
-
+#dragdrop{
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
