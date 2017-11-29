@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charsest=utf-8"/>
+<html>
+  <head>
+  <title>My webpage</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script>
+    function validateForm()
+    {
+      if (document.forms["myForm"]["name"].value==null || document.forms["myForm"]["name"].value=="")
+      {
+        alert("Name must be filled out");
+        return false;
+      }
+      if (document.forms["myForm"]["phone"].value==null || document.forms["myForm"]["phone"].value=="")
+      {
+        alert("Phone must be filled out");
+        return false;
+      }
+      if (document.forms["myForm"]["email"].value==null || document.forms["myForm"]["email"].value=="")
+      {
+        alert("Email must be filled out");
+        return false;
+      }
+      return true;
+    }
+  </script> 
+  <style>
+    *  
+    {
+      margin: 0;
+      padding: 0;
+    }
+    #map
+    {
+      height: 400px;
+      width: 500px;
+      float: left;
+    }
+  </style>
+  <script>
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+  </script>
+  </head>
+  
+  <body>
+    <div id="wrap">
+    <!--<div id="header">
+      This is my header
+    </div>-->
+      <div id="topbar">
+        <div id="menus">
+          <ul id="topmenu">
+            <li class="active"><a href="#">Home</a>
+            </li>
+            <li><a onclick="changecolor()">BG</a></span>
+            </li>
+            <li><a href="#table">Table</a></span>
+            </li>
+            <li><a href="#create">HTML5</a>
+            </li>
+            <li><a href="#">Products</a>
+            </li>
+            <li><a href="#contactus">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div id="header">
+        </div>
+      </div>
+    <div id="content">
+    <div id="mainpage">
+    <H3 style="font-size:40px">Hello to my webpage</H3>
+    <p>This web page was made as a course work for WWW-course </p><br>
+    <br>
+    <p title="I'm a tooltip">Hello! My name is Vertti Tuomivaara, and I am a student in Kamk University of Applied Sciences<p>
+    <br>
+    <a href="http://kamk.fi/fi" target="_blank"> Kamk page</a>
+    <br>
+    <img src="images/controller.png">
+    <br>
+    <h2 id="create">Creating your own HTML5 page </h2>
+    <ul>
+      <li>test ul list</li>
+    </ul>
+    <br>
+    <ol>
+      <li>test ol list</li>
+    </ol>
+      
+    <h2 id="table"> How to make table in html pages?</h2>
+    <table>
+      <caption> Persons </caption>
+      <tr>
+        <th colspan="2"> FirstName and Surname </th>
+        <th> Age </th>
+      </tr>
+      <tr>
+        <td style="color:#26283c"> My FirstName </td>
+        <td style="color:#26283c"> My SurName </td>
+        <td> My Age </td>
+      </tr>
+    </table>
+    
+    <table id="1">
+      <tr>
+        <th>SN</th>
+        <th>Course</th>
+        <th>Teacher</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>WWW and Internet</td>
+        <td>Deepak</td>
+      </tr>
+    </table>
+      
+    <h2 id ="contactus"> Contact Us</h2>
+    <form>
+      First name: <input type="text" name="fname"> <br>
+      Last name: <input type="text" name="lname"> <br>
+      Gender: <input type="radio" name="gender" value="male" checked> Male 
+      <input type="radio" name="gender" value="female"> Female <br>
+      E-mail: <input type="email" name="email"><br>
+      Salutation: <select name="salutation">
+      <option>Dr</option>
+      <option>Mr</option>
+      <option>Mrs</option>
+      <option>Miss</option>
+      <option>Ms</option>
+      </select>
+      Favourite sport: <select name="sport">
+      <option>Baseball</option>
+      <option>Basketball</option>
+      <option>Football</option>
+      <option>Hockey</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+      <h2>Validation form</h2>
+    <form name="myForm" onsubmit="return validateForm()">
+      Name: <input type="text" name="name" /><br/>
+      Phone: <input type="text" name="phone" /><br/>
+      E-mail: <input type="text" name="email" /><br/>
+      <input type="submit" value="Click to Submit" />
+    </form><br>
+    <div id ="dragdrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<img id="drag1" src="images/bgwolf.jpeg" draggable="true"ondragstart="drag(event)" width="336" height="69">  
+    <h2>Integrating video</h2> <!--when you have a video on your own folder-->
+    <video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <h2>Integrating youtube vid</h2>
+      <iframe width="480" height="260" src="https://www.youtube.com/embed/vFON_wo5VEc?rel=0"
+         frameborder="0" allowfullscreen></iframe>
+      
+    </div>
+    </div>
+    <br><br>
+
+    <h2>Google map</h2>
+    <div id="map"</div> <!-- Try put the script to header -->
+    <script> 
+    function initMap() 
+      {
+        if (navigator.geolocation){
+        var location = {lat: 64.222178, lng: 27.727850};
+        var map = new google.maps.Map(document.getElementById("map"),{zoom: 4, center: location});
+        var marker = new google.maps.Marker({position: location, map: map });
+        }
+      } 
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhnN6t4blYzVVDQMsr6w4pIjgj92SdBao&callback=initMap"></script>
+    <br><br>  
+
+    <h2>Another googlemap test. Click to see position</h2>
+    <div id="map"></div>
+    <button onclick="showLocation()">Click</button>
+    <script>
+      function.showLocation()
+      {
+       if(navigator.geolocation) 
+       {
+         navigator.geolocation.getCurrentPosition(showPosition);
+       }
+       else
+       {
+         alert("Your browser does not support geolocation"); 
+       }
+      }
+      function showPosition(position)
+      {
+       alert("Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude); 
+      }
+    </script>
+    <br>
+	
+	
+	
+    <div id ="footer">
+      <p>Copyright &copy;
+        <script type="text/javascript">var ct=new Date(); document.write(ct.getFullYear());</script>
+      </p>
+    </div>
+  </body>
+</html>
