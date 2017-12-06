@@ -51,6 +51,17 @@
 		ev.target.appendChild(document.getElementById(data));
 	}
   </script>
+  <script> 
+    function initMap() 
+      {
+        if (navigator.geolocation){
+        var location = {lat: 32.715738, lng: -117.161084};
+        var map = new google.maps.Map(document.getElementById("map"),{zoom: 4, center: location});
+        var marker = new google.maps.Marker({position: location, map: map });
+        }
+      } 
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhnN6t4blYzVVDQMsr6w4pIjgj92SdBao&callback=initMap"></script>
   </head>
   
   <body>
@@ -61,34 +72,31 @@
       <div id="topbar">
         <div id="menus">
           <ul id="topmenu">
-            <li class="active"><a href="#">Home</a>
+            <li class="active"><a href="#">Top</a>
             </li>
-            <li><a onclick="changecolor()">BG</a></span>
             </li>
-            <li><a href="#table">Table</a></span>
+            <li><a href="#table">Release dates</a></span>
             </li>
-            <li><a href="#create">HTML5</a>
+            <li><a href="#create">Car usage</a>
             </li>
-            <li><a href="#">Products</a>
-            </li>
-            <li><a href="#contactus">Contact Us</a>
+            <li><a href="#contactus">Contact us</a>
             </li>
           </ul>
         </div>
         <div id="header">
         </div>
       </div>
+	  
     <div id="content">
-    <div id="mainpage">
+    <div id="mainpage"><br><br>
     <H3 style="font-size:40px">Hello to my Rocket League page</H3>
     <p>This web page was made as a course work for WWW-course </p><br>
+    <p title="I'm a tooltip">Hello! My name is Vertti, and I am a student in Kajaani University of Applied Sciences<br>
+	In this page you can find stuff regarding Rocket League game.<br>
+	And if you don't know what Rocket League is, then I recommend to CHECK the link below :)<p>
+    <a href="https://www.rocketleague.com/" target="_blank" style="color:#33cccc"> Official Rocket League webpage</a>
     <br>
-    <p title="I'm a tooltip">Hello! My name is Vertti, and I am a student in Kamk University of Applied Sciences<p>
-<p> In this page you can find stuff regarding Rocket League game.<p>
-    <br>
-    <a href="https://www.rocketleague.com/" target="_blank"> Official Rocket League webpage</a>
-    <br>
-    <img src="images/controller.png">
+    <img src="images/RLmatch.png">
     <br>
     <h2 id="create">Most used and unused cars!</h2>
     <br>
@@ -108,11 +116,11 @@
 <li>Paladin</li>
 <li>Zippy</li>
     </ol>
-</dl>
+</dl><br>
       
-    <h2 id="table"> Platform release dates</h2>
+    <h2 id="table"> Platform release dates</h2><br>
     <table>
-      <caption> Release dates </caption>
+      <caption> Release dates of each specific console </caption>
       <tr>
         <th colspan="2"> Platform, is released? </th>
         <th> Release date </th>
@@ -156,23 +164,23 @@
 <tr>
         <td>Best eSports game</td>
         <td>No</td>
-      </tr>
-    </table>
+      </tr> 
+    </table><br>
       
-    <h2 id ="contactus"> Tell us your favourite car</h2>
-    <form>
+    <h2 id ="contactus"> Contact Us</h2><br>
+    <form name="myForm" onsubmit="return validateForm()">
       First name: <input type="text" name="fname"> <br>
       Last name: <input type="text" name="lname"> <br>
       Gender: <input type="radio" name="gender" value="male" checked> Male 
       <input type="radio" name="gender" value="female"> Female <br>
       E-mail: <input type="email" name="email"><br>
-      Salutation: <select name="salutation">
-      <option>Dr</option>
-      <option>Mr</option>
-      <option>Mrs</option>
-      <option>Miss</option>
-      <option>Ms</option>
-      </select>
+      Favourite map:<select name="Map">
+      <option>Neo Tokyo</option>
+      <option>Mansfield</option>
+      <option>AquaDome</option>
+      <option>Wasteland</option>
+      <option>Other</option>
+      </select><br>
       Favourite car: <select name="Car">
       <option>Octane</option>
       <option>Dominus</option>
@@ -180,43 +188,39 @@
       <option>Batmobile</option>
 <option>Breakout</option>
 <option>Masamume</option>
-      </select>
+      </select><br>
       <input type="submit" value="Submit">
-    </form><br>
-      <h2>Validation form</h2>
-    <form name="myForm" onsubmit="return validateForm()">
-      Name: <input type="text" name="name" /><br/>
-      Phone: <input type="text" name="phone" /><br/>
-      E-mail: <input type="text" name="email" /><br/>
-      <input type="submit" value="Click to Submit" />
-    </form><br>
-    <div id ="dragdrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-	<img id="drag1" src="images/bgwolf.jpeg" draggable="true"ondragstart="drag(event)" width="336" height="69">
-    <h2>Funny Rocket league video</h2>
-      <iframe width="480" height="260" src="https://www.youtube.com/embed/vFON_wo5VEc?rel=0"
+    </form><br><br>
+	
+	<table>
+	<caption>Choose your preferred play type by draggin the pictures inside the boxes</caption>
+	<tr>
+        <th> More used </th>
+        <th> Less used </th>
+    </tr>
+	<tr>
+	<td><div id ="dragdrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+	<td><div id ="dragdrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div></td>
+	</tr>
+	</table>
+	<br>
+	<img id="drag1" src="images/keyboard.png" draggable="true"ondragstart="drag(event)" width="300" height="100">
+	<img id="drag2" src="images/controller.png" draggable="true"ondragstart="drag(event)" width="300" height="100">
+	<br>
+	
+    <h2>Funny Rocket league video</h2><br>
+      <iframe width="500" height="300" src="https://www.youtube.com/embed/vFON_wo5VEc?rel=0"
          frameborder="0" allowfullscreen></iframe>
-      
     </div>
     </div>
-    <br><br>
-
+    
     <h2>Rocket League headquarters (somewhere in San Diego)</h2>
     <div id="map"></div> <!-- Try put the script to header -->
-    <script> 
-    function initMap() 
-      {
-        if (navigator.geolocation){
-        var location = {lat: 32.715738, lng: -117.161084};
-        var map = new google.maps.Map(document.getElementById("map"),{zoom: 4, center: location});
-        var marker = new google.maps.Marker({position: location, map: map });
-        }
-      } 
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhnN6t4blYzVVDQMsr6w4pIjgj92SdBao&callback=initMap"></script>
+    
     <br>
 	
     <div id ="footer">
-      <p font-size="16px">Copyright &copy Vertti Tuomivaara;
+      <p font-size="16px">Copyright &copy Vertti Tuomivaara
         <script type="text/javascript">var ct=new Date(); document.write(ct.getFullYear());</script>
       </p>
     </div>
