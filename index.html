@@ -80,52 +80,86 @@
       </div>
     <div id="content">
     <div id="mainpage">
-    <H3 style="font-size:40px">Hello to my webpage</H3>
+    <H3 style="font-size:40px">Hello to my Rocket League page</H3>
     <p>This web page was made as a course work for WWW-course </p><br>
     <br>
-    <p title="I'm a tooltip">Hello! My name is Vertti Tuomivaara, and I am a student in Kamk University of Applied Sciences<p>
+    <p title="I'm a tooltip">Hello! My name is Vertti, and I am a student in Kamk University of Applied Sciences<p>
+<p> In this page you can find stuff regarding Rocket League game.<p>
     <br>
-    <a href="http://kamk.fi/fi" target="_blank"> Kamk page</a>
+    <a href="https://www.rocketleague.com/" target="_blank"> Official Rocket League webpage</a>
     <br>
     <img src="images/controller.png">
     <br>
-    <h2 id="create">Creating your own HTML5 page </h2>
-    <ul>
-      <li>test ul list</li>
-    </ul>
+    <h2 id="create">Most used and unused cars!</h2>
     <br>
-    <ol>
-      <li>test ol list</li>
+<dl>
+<dt>Top 3 Most used cars</dt>
+    <ol type="I">
+      <li>Takumi</li>
+<li>Dominus</li>
+<li>Batmobile</li>
     </ol>
+</dl>
+<br>
+<dl>
+<dt>Top 3 Most unused cars</dt>
+    <ol type="I">
+      <li>Backfire</li>
+<li>Paladin</li>
+<li>Zippy</li>
+    </ol>
+</dl>
       
-    <h2 id="table"> How to make table in html pages?</h2>
+    <h2 id="table"> Platform release dates</h2>
     <table>
-      <caption> Persons </caption>
+      <caption> Release dates </caption>
       <tr>
-        <th colspan="2"> FirstName and Surname </th>
-        <th> Age </th>
+        <th colspan="2"> Platform, is released? </th>
+        <th> Release date </th>
       </tr>
       <tr>
-        <td style="color:#26283c"> My FirstName </td>
-        <td style="color:#26283c"> My SurName </td>
-        <td> My Age </td>
+        <td style="color:#FFFFFF"> PS4 </td>
+        <td style="color:#FFFFFF"> Yes </td>
+        <td> July 7, 2015 </td>
+      </tr>
+<tr>
+        <td style="color:#FFFFFF"> PC (steam) </td>
+        <td style="color:#FFFFFF"> Yes </td>
+        <td> July 7, 2015 </td>
+      </tr>
+<tr>
+        <td style="color:#FFFFFF"> Xbox One </td>
+        <td style="color:#FFFFFF"> Yes </td>
+        <td> February 17, 2016 </td>
+      </tr>
+<tr>
+        <td style="color:#FFFFFF"> Nintendo Switch </td>
+        <td style="color:#FFFFFF"> Yes </td>
+        <td> November 14, 2017 </td>
       </tr>
     </table>
-    
+    <br>
+    <h2 id="table"> Winned game awards</h2>
     <table id="1">
       <tr>
-        <th>SN</th>
-        <th>Course</th>
-        <th>Teacher</th>
+        <th>Award name</th>
+        <th>Winned?</th>
       </tr>
       <tr>
-        <td>1</td>
-        <td>WWW and Internet</td>
-        <td>Deepak</td>
+        <td>Game of the year</td>
+        <td>Yes</td>
+      </tr>
+<tr>
+        <td>Best multiplayer game</td>
+        <td>Yes</td>
+      </tr>
+<tr>
+        <td>Best eSports game</td>
+        <td>No</td>
       </tr>
     </table>
       
-    <h2 id ="contactus"> Contact Us</h2>
+    <h2 id ="contactus"> Tell us your favourite car</h2>
     <form>
       First name: <input type="text" name="fname"> <br>
       Last name: <input type="text" name="lname"> <br>
@@ -139,14 +173,16 @@
       <option>Miss</option>
       <option>Ms</option>
       </select>
-      Favourite sport: <select name="sport">
-      <option>Baseball</option>
-      <option>Basketball</option>
-      <option>Football</option>
-      <option>Hockey</option>
+      Favourite car: <select name="Car">
+      <option>Octane</option>
+      <option>Dominus</option>
+      <option>Takumi</option>
+      <option>Batmobile</option>
+<option>Breakout</option>
+<option>Masamume</option>
       </select>
       <input type="submit" value="Submit">
-    </form>
+    </form><br>
       <h2>Validation form</h2>
     <form name="myForm" onsubmit="return validateForm()">
       Name: <input type="text" name="name" /><br/>
@@ -155,13 +191,8 @@
       <input type="submit" value="Click to Submit" />
     </form><br>
     <div id ="dragdrop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-	<img id="drag1" src="images/bgwolf.jpeg" draggable="true"ondragstart="drag(event)" width="336" height="69">  
-    <h2>Integrating video</h2> <!--when you have a video on your own folder-->
-    <video width="320" height="240" controls>
-    <source src="movie.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-    <h2>Integrating youtube vid</h2>
+	<img id="drag1" src="images/bgwolf.jpeg" draggable="true"ondragstart="drag(event)" width="336" height="69">
+    <h2>Funny Rocket league video</h2>
       <iframe width="480" height="260" src="https://www.youtube.com/embed/vFON_wo5VEc?rel=0"
          frameborder="0" allowfullscreen></iframe>
       
@@ -169,13 +200,13 @@
     </div>
     <br><br>
 
-    <h2>Google map</h2>
+    <h2>Rocket League headquarters (somewhere in San Diego)</h2>
     <div id="map"></div> <!-- Try put the script to header -->
     <script> 
     function initMap() 
       {
         if (navigator.geolocation){
-        var location = {lat: 64.222178, lng: 27.727850};
+        var location = {lat: 32.715738, lng: -117.161084};
         var map = new google.maps.Map(document.getElementById("map"),{zoom: 4, center: location});
         var marker = new google.maps.Marker({position: location, map: map });
         }
@@ -185,7 +216,7 @@
     <br>
 	
     <div id ="footer">
-      <p>Copyright &copy;
+      <p font-size="16px">Copyright &copy Vertti Tuomivaara;
         <script type="text/javascript">var ct=new Date(); document.write(ct.getFullYear());</script>
       </p>
     </div>
